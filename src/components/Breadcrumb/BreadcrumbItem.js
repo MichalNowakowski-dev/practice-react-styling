@@ -1,11 +1,19 @@
 import React from "react";
-import StyledBreadcrumbItem from "./BreadcrumbItem.styled";
+import {
+  StyledBreadcrumbItem,
+  StyledBreadcrumbLink,
+} from "./BreadcrumbItem.styled";
 
 const BreadcrumbItem = (props) => {
   return (
-    <li>
-      <StyledBreadcrumbItem>{props.children}</StyledBreadcrumbItem>
-    </li>
+    <StyledBreadcrumbItem>
+      <StyledBreadcrumbLink
+        href={props.href ? props.href : ""}
+        active={props.active}
+      >
+        {props.children}
+      </StyledBreadcrumbLink>
+    </StyledBreadcrumbItem>
   );
 };
 
